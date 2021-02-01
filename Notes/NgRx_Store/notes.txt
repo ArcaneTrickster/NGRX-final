@@ -1,0 +1,17 @@
+1) we need to install @ngrx/store = npm install --save @ngrx/store.
+2) we created shopping-list.reducer.ts inside store/shopping list folder.video 347.
+3)we created shopping-list.action.ts inside store/shopping list folder. video 348.
+4) watch video 358 for summary. WATCH THIS BEFORE LOOKING AT CODE COMMENTS.
+5) Effect class is used from now on.we need to install @ngrx/effect = npm install --save @ngrx/effect. It is a side effect model for ngrx store.
+    i) first i created auth.effect.ts inside auth/store. see it.
+    ii) imported and registered effect module in our app.module.ts.
+    iii) we created LOGIN_FAIL const in our auth.action.ts and a class for it respectively.
+    iv) we added a variable called authError : string, loading: boolean in out state interface inside our auth.reducer.ts. we added authError = null in login case. we also have created a login_start switch case.
+    v) in our reducer we also created login_fail case.
+    vi) we removed and created a new code for subscribing to login state in ngOnInit.
+6) to download redux-devtools-extension, go to https://github.com/zalmoxisus/redux-devtools-extension and click link in installation section(for chrome if you use chrome.)
+   i) now install this package in your project `npm install --save-dev @ngrx/store-devtools`
+   ii) now add in your imports in your app.module.ts, `StoreDevToolsModule.instrument({logOnly: environment.production})` this environment.production property restricts output only to when we are in production.
+   iii) now whenever we start out application, we can use redux-devtool-extension in chrome to see the state of our store at difference point in time throughout our app life cycle.
+7) there is another package we installed called `npm install --save-dev @ngrx/router-store` and added in imports `StoreRouterConnectingModule.forRoot()` in app.module.ts. this allow chome extension(redux-devtool-extension) to also show routing status with data attached to it.
+8)now we did what we did with shopping-list section, to the recipes...like creating a reducer,action and effects files.
